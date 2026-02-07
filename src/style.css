@@ -1,0 +1,458 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+#webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+html,
+body
+{
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: hikasami;
+  src: url("/fonts/hikasami/Hikasami-VF.woff2") format("woff2");
+}
+
+/* 
+Modals 
+*/
+
+/* General */
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: black;
+  width: 60vmax;
+  height: 80vmin;
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.heading-bar {
+  position: absolute;
+  top: 1.25vmin;
+  left: 0%;
+  margin: 2.5vmax;
+  width: 55vmax;
+  height: 2.5vmin;
+  background-color: transparent;
+}
+
+.title {
+  position: absolute;
+  left: 0%s;
+  top: 0%;
+  background-color: transparent;
+  color: white;
+  width: 25vmax;
+  height: 2.5vmin;
+  line-height: 2.5vmin;
+  font-family: hikasami;
+  font-weight: 500;
+  font-size: 0.875vmax;
+  text-align: left;
+  margin-left: 1.25vmax;
+}
+
+.exit-button {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  background-color: transparent;
+  color: white;
+  width: 5vmax;
+  height: 2.5vmin;
+  cursor: pointer;
+  border: none;
+  text-align: right;
+  margin-right: 1.25vmax;
+  font-family: hikasami;
+  font-size: 0.875vmax;
+  transition: color 0.5s ease-in-out;
+}
+
+.exit-button:hover {
+  color: #00bfff;
+}
+
+.main-container {
+  position: absolute;
+  left: 0%;
+  top: 10vmin;
+  width: 55vmax;
+  height: 62.5vmin;
+  margin-left: 2.5vmax;
+  margin-right: 2.5vmax;
+  margin-top: 1.25vmin;
+  background-color: transparent;
+}
+
+/* Work */
+
+.works-navigation {
+  position: absolute;
+  left: 0%;
+  top: 1.25vmax;
+  width: 16vmax;
+  height: 57.5vmin;
+  margin-left: 1.25vmax;
+  background-color: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.works-nav-list {
+  position: relative;
+  left: 0%;
+  top: 0%;
+  width: 15vmax;
+  height: 5vmin;
+  font-family: hikasami;
+  font-size: 0.75vmax;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-bottom: 0.5vmin;
+  transition: color 0.25s ease-in-out, border 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.works-nav-list:hover {
+  color: #00bfff;
+  border: 2px solid #00bfff;
+}
+
+.works-navigation > .works-nav-list:nth-child(n + 7) {
+  border: 2px solid rgb(65, 65, 65);
+  color: rgb(65, 65, 65);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.works-navigation::-webkit-scrollbar {
+  width: 0.25vmax;
+}
+
+.works-navigation::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.works-navigation::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Project Viewers */
+
+.works-viewer {
+  position: absolute;
+  right: 1.25vmax;
+  top: 1.25vmax;
+  width: 35vmax;
+  height: 57.5vmin;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  box-sizing: border-box;
+  opacity: 0;
+  display: none;
+}
+
+.main-container > .works-viewer:nth-child(2) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/portal_scene/portal_scene.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.main-container > .works-viewer:nth-child(3) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/organism/organism.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.main-container > .works-viewer:nth-child(4) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/kaleidos/kaleidos.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.main-container > .works-viewer:nth-child(5) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/oneiric_afterlife/oneiric_afterlife.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.main-container > .works-viewer:nth-child(6) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/i_am_another/i_am_another.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.main-container > .works-viewer:nth-child(7) .work-image {
+  position: absolute;
+  left: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12.5vmax;
+  height: 52.5vmin;
+  background-image: url('/media/projects/reverie_eye/reverie_eye.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+
+.work-desc-container {
+  position: absolute;
+  right: 0.625vmax;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19.5vmax;
+  height: 50vmin;
+  background-color: transparent;
+}
+
+.work-title {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 2.5vmin;
+  color: white;
+  background-color: transparent;
+  font-family: hikasami;
+  font-size: 0.875vmax;
+  font-weight: 500;
+  margin-bottom: 2vmin;
+}
+
+.work-subhead {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 2.5vmin;
+  color: white;
+  background-color: transparent;
+  font-family: hikasami;
+  font-size: 0.7vmax;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 2vmin;
+}
+
+.work-link {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 2.5vmin;
+  color: white;
+  background-color: transparent;
+  font-family: hikasami;
+  font-size: 0.7vmax;
+  font-weight: 400;
+  margin-bottom: 2.5vmin;
+  cursor: pointer;
+}
+
+.work-link > a {
+  color: white;
+  text-decoration: underline;
+  transition: color 0.25s ease-in-out;
+}
+
+.work-link > a:hover {
+  color: #00bfff;
+}
+
+.work-text {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 18vmax;
+  height: 35vmin;
+  color: white;
+  background-color: transparent;
+  font-family: hikasami;
+  font-size: 0.625vmax;
+  font-weight: 400;
+  line-height: 2.0vmin;
+  overflow: hidden;
+}
+
+/* Info */
+
+.info-container {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 27.5vmax;
+  height: 52.5vmin;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.info-text {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 25vmax;
+  height: 47.5vmin;
+  margin: 1.25vmax;
+  color: white;
+  background-color: transparent;
+  font-family: hikasami;
+  font-size: 0.75vmax;
+  font-weight: 400;
+  line-height: 2.25vmin;
+  text-overflow: clip;
+}
+
+.profile-container {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  width: 27.5vmax;
+  height: 52.5vmin;
+  background-color: transparent;
+  color: white;
+  overflow: hidden;
+}
+
+.profile-image {
+  position: absolute;
+  right: 0%;
+  top: 0;
+  width: 20vmax;
+  height: 20vmax;
+  background-image: url('/media/profile_image.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 1.25vmax;
+}
+
+.socials-bar {
+  position: absolute;
+  bottom: 2.5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52.5vmax;
+  height: 5vmin;
+  background-color: transparent;
+  display: flex;
+}
+
+.socials-links {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  float: left;
+  width: 12.9375vmax;
+  height: 5vmin;
+  background-color: black;
+  text-align: center;
+  line-height: 5vmin;
+  font-family: hikasami;
+  font-weight: 400;
+  font-size: 0.75vmax;
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+  transition: border 0.5s ease-in-out, color 0.25s ease-in-out;
+}
+
+.socials-bar > .socials-links:nth-child(1) {
+  margin-right: 0.25vmax;
+}
+
+.socials-bar > .socials-links:nth-child(2) {
+  margin-right: 0.25vmax;
+}
+
+.socials-bar > .socials-links:nth-child(3) {
+  margin-right: 0.25vmax;
+}
+
+.links {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+.socials-links:hover {
+  border: 2px solid #00bfff;
+  color: #00bfff;
+}
+
+.socials-links:hover .links {
+  color: #00bfff;
+}
+
