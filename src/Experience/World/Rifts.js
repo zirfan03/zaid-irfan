@@ -65,7 +65,6 @@ export default class Rifts
     {
         // Emissives
 
-
         this.portal1Mesh.material = new THREE.ShaderMaterial ({
             vertexShader: portalVertexShader,
             fragmentShader: portalFragmentShader,
@@ -254,7 +253,7 @@ export default class Rifts
             project5Btn: document.querySelector(".works-nav-list.work5"),
             project6Btn: document.querySelector(".works-nav-list.work6")
         }
-        
+
         this.projectBtns.project1Btn.addEventListener('click', () =>
         {
             this.showViewer(this.projectViewers.project1View)

@@ -17,6 +17,8 @@ export default class Resources extends EventEmitter
         this.toLoad = this.sources.length
         this.loaded = 0
 
+        this.loadingManager = new THREE.LoadingManager()
+
         this.setLoaders()
         this.startLoading()
     }
@@ -27,7 +29,7 @@ export default class Resources extends EventEmitter
         this.loaders.draco = new DRACOLoader()
         this.loaders.draco.setDecoderConfig({ type: 'js'})
         this.loaders.draco.setDecoderPath('/draco/')
-        this.loaders.gltfLoader = new GLTFLoader()
+        this.loaders.gltfLoader = new GLTFLoader(this.loadingManager)
         this.loaders.gltfLoader.setDRACOLoader(this.loaders.draco)
         this.loaders.textureLoader = new THREE.TextureLoader()
         this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()

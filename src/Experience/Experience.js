@@ -6,6 +6,7 @@ import Camera from './Camera.js'
 import Raycaster from './Raycaster.js'
 import Resources from './Utils/Resources.js'
 import Renderer from './Renderer.js'
+import LoadingScreen from './LoadingScreen.js'
 import PostProcessing from './PostProcessing.js'
 import World from './World/World.js'
 
@@ -38,6 +39,7 @@ export default class Experience
         this.camera = new Camera()
         this.raycaster = new Raycaster()
         this.renderer = new Renderer()
+        this.loadingScreen = new LoadingScreen()
         this.postprocessing = new PostProcessing()
         this.world = new World()
 
