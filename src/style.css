@@ -22,6 +22,24 @@ body
   src: url("/fonts/hikasami/Hikasami-VF.woff2") format("woff2");
 }
 
+.website-title {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  margin: 2vmax;
+  font-family: hikasami;
+  font-size: 1vmax;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  z-index: 199;
+  transition: color 0.5s ease-in-out;
+}
+
+.website-title:hover {
+  color: #00bfff;
+}
+
 /* Loading Screen */
 
 .loading-background {
